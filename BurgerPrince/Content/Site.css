@@ -1,6 +1,13 @@
-﻿body {
+﻿/*:root {
+    --main-blue: #0C71C3;
+    --link-blue: #09A7E4;
+    --white: #fff;
+}*/
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-size: 15px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +28,35 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar-inverse {
+    background-color: #0C71C3;
+    border-color: #0C71C3;
+    color: #fff;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+            background-color: #09A7E4;
+        }
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }
+
+        .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+            color: #eee;
+            background-color: transparent;
+        }
+
+.tab-pane {
+    margin: 1rem;
+}
+
+.formPadding {
+    padding-bottom: 1rem;
 }
