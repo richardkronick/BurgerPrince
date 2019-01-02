@@ -144,7 +144,7 @@
                 <tr>
                     <td>SUBTOTAL</td>
                     <td></td>
-                    <td>$@orderSubtotal</td>
+                    <td>$@string.Format("{0:C}", orderSubtotal)</td>
                 </tr>
                 @{
                     decimal orderTax = 0.0m;
