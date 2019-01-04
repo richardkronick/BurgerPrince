@@ -2,7 +2,7 @@
 
 *** **Still in development** ***
 
-This is a food/menu ordering system. Burger King menu items are used as default examples, however, this can be used as an internal ordering system for not only food or restaruants but for nearly any menu ordering environment. 
+This is a food/menu ordering system. Burger King menu items are used as default examples, however, this can be used as an internal ordering system for not only food or restaurants but for nearly any menu ordering environment. 
 
 The application is written in C#.
 
