@@ -1,0 +1,88 @@
+﻿@model BurgerPrince.Models.Order
+
+@{
+    ViewBag.Title = "OrderDetails";
+}
+
+<h2 class="text-center">Order Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Item</th>
+            <th>Item Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.MenuItems)
+        {
+            if (item.Quantity != 0)
+            {
+                <tr>
+                    <td>@item.Quantity</td>
+                    <td>@item.ItemName</td>
+                    <td>@item.Subtotal</td>
+                </tr>
+            }
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        @{
+            decimal orderSubtotal = 0.0m;
+            foreach (var item in Model.MenuItems)
+            {
+                orderSubtotal += item.Subtotal;
+            }
+        }
+        <tr>
+            <td>SUBTOTAL</td>
+            <td></td>
+            <td>$@orderSubtotal</td>
+        </tr>
+        @{
+            decimal orderTax = 0.0m;
+            foreach (var item in Model.MenuItems)
+            {
+                var itemTax = item.Subtotal * item.Tax;
+                orderTax += itemTax;
+            }
+        }
+        <tr>
+            <td>TAX</td>
+            <td></td>
+            <td>@string.Format("{0:C}", orderTax)</td>
+        </tr>
+        <tr>
+            <td>TOTAL</td>
+            <td></td>
+            <td>@string.Format("{0:C}", (orderSubtotal + orderTax))</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Order Date and Time: @Model.OrderDateTime</td>
+        </tr>
+    </tbody>
+</table>
+@if (orderSubtotal == 0)
+{
+    <p style="color:red; text-align: center;">
+        No items have been added to your order.
+    </p>
+}
+<div class="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-5">
+    <form action="@Url.Action("NewOrder", "Home")" method="post">
+        <button type="submit" class="btn btn-primary text-center">New Order</button>
+    </form>
+</div>
+<br />
+<br />
+<br />
+

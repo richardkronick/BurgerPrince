@@ -1,0 +1,13 @@
+﻿@model List<BurgerPrince.Models.Order>
+
+@{
+    ViewBag.Title = "ViewMyOrders";
+}
+
+<h2>My Orders</h2>
+
+@foreach (var order in Model)
+{
+    <p>@order.OrderDateTime</p>
+}
+

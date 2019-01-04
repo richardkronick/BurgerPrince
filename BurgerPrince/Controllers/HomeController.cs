@@ -62,28 +62,6 @@ namespace BurgerQueen.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult OrderDetails(decimal subtotal, decimal tax, decimal total)
-        {
-            using (var context = new BurgerPrinceContext())
-            {
-                List<MenuItem> menuItems = context.MenuItems.ToList();
-
-                var newOrder = new Order()
-                {
-                    OrderDateTime = DateTime.Now,
-                    OrderSubtotal = subtotal,
-                    OrderTax = tax,
-                    OrderTotal = total,
-                    MenuItems = menuItems
-                };
-
-                context.Orders.Add(newOrder);
-                context.SaveChanges();
-
-                return View(newOrder);
-            }
-        }
-
         public RedirectToRouteResult NewOrder()
         {
             using (var context = new BurgerPrinceContext())

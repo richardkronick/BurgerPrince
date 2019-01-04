@@ -1,0 +1,15 @@
+﻿@model BurgerPrince.Models.MenuItem
+
+
+<form action="@Url.Action("UpdateMenuItem", "Home", new { id = Model.ID })" method="post" name="amount" class="formPadding row">
+    <div class="form-row">
+        <div class="col-xs-3">@Model.ItemName</div>
+        <div class="col-xs-3">$@Model.Price</div>
+        <div class="col-xs-3">
+            <input required autocomplete="off" class="form-control" min="1" max="@Model.Inventory" name="quantity" type="number" value="1" />
+        </div>
+        <div class="col-xs-3">
+            <input class="btn btn-primary" type="submit" value="Add to Cart" />
+        </div>
+    </div>
+</form>
