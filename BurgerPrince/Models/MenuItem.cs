@@ -14,6 +14,8 @@ namespace BurgerPrince.Models
         public string ItemName { get; set; }
         public decimal Price { get; set; }
         public decimal Tax { get; set; }
+
+        [Required]
         public int Quantity { get; set; }
         public decimal Subtotal { get; set; }
         public int Inventory { get; set; }

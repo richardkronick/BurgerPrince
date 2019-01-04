@@ -21,22 +21,27 @@ namespace BurgerQueen.Controllers
             };
         }
 
+        [HttpPost]
         public RedirectToRouteResult UpdateMenuItem(int id, int quantity)
         {
-            using (var context = new BurgerPrinceContext())
+            if (ModelState.IsValid)
             {
-                if (context.MenuItems.Any(m => m.ID == id))
+                using (var context = new BurgerPrinceContext())
                 {
-                    var menuItem = context.MenuItems.Single(m => m.ID == id);
+                    if (context.MenuItems.Any(m => m.ID == id))
+                    {
+                        var menuItem = context.MenuItems.Single(m => m.ID == id);
 
-                    menuItem.Quantity += quantity;
-                    menuItem.Subtotal += (menuItem.Price * quantity);
-                    menuItem.Inventory -= quantity;
+                        menuItem.Quantity += quantity;
+                        menuItem.Subtotal += (menuItem.Price * quantity);
+                        menuItem.Inventory -= quantity;
 
-                    context.SaveChanges();
+                        context.SaveChanges();
+                    }
+                    return RedirectToAction("Index");
                 }
-                return RedirectToAction("Index");
             }
+            return RedirectToAction("Index");
         }
 
         public RedirectToRouteResult DeleteMenuItem(int id)
@@ -98,7 +103,7 @@ namespace BurgerQueen.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your about page.";
+            ViewBag.Message = "Soon to be implemented, this feature will allow logged in users to view their previous orders.";
 
             return View();
         }

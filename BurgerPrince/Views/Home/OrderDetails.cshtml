@@ -71,6 +71,12 @@
         </tr>
     </tbody>
 </table>
+@if (orderSubtotal == 0)
+{
+    <p style="color:red; text-align: center;">
+        No items have been added to your order.
+    </p>
+}
 <div class="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-5">
     <form action="@Url.Action("NewOrder", "Home")" method="post">
         <button type="submit" class="btn btn-primary text-center">New Order</button>
