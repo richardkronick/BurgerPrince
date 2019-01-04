@@ -2,12 +2,27 @@
 
 @{
     ViewBag.Title = "ViewMyOrders";
+    int orderNum = 1;
 }
 
 <h2>My Orders</h2>
 
+<p class="text-center text-danger"><strong>***Feature Still In Development***</strong></p>
+
 @foreach (var order in Model)
 {
-    <p>@order.OrderDateTime</p>
+    if (ViewBag.userid == order.UserId)
+    {
+        <p>Order number: @(orderNum++)</p>
+        <p>Order Date: @order.OrderDateTime</p>
+        @*foreach(var item in order.MenuItems)
+        {
+        <p>@item.Quantity X Item Name @item.ItemName</p>
+        }*@
+        <p>Order Subtotal: @order.OrderSubtotal</p>
+        <p>Order Tax: @order.OrderTax</p>
+        <p>Order Total: @order.OrderTotal</p>
+        <hr />
+    }
 }
 

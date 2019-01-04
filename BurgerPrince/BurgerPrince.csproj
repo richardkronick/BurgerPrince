@@ -212,6 +212,10 @@
     <Compile Include="Migrations\201901020302254_FixedStylingAndMargins.Designer.cs">
       <DependentUpon>201901020302254_FixedStylingAndMargins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901042132323_AddedUserIdToOrderTable.cs" />
+    <Compile Include="Migrations\201901042132323_AddedUserIdToOrderTable.Designer.cs">
+      <DependentUpon>201901042132323_AddedUserIdToOrderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -308,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901020302254_FixedStylingAndMargins.resx">
       <DependentUpon>201901020302254_FixedStylingAndMargins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901042132323_AddedUserIdToOrderTable.resx">
+      <DependentUpon>201901042132323_AddedUserIdToOrderTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

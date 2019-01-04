@@ -14,6 +14,7 @@ namespace BurgerPrince.Models
         public decimal OrderSubtotal { get; set; }
         public decimal OrderTax { get; set; }
         public decimal OrderTotal { get; set; }
+        public string UserId { get; set; }
 
         public List<MenuItem> MenuItems { get; set; }
     }

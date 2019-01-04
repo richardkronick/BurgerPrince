@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
 
 namespace BurgerQueen.Controllers
 {
@@ -72,7 +73,7 @@ namespace BurgerQueen.Controllers
                 {
                     item.Quantity = 0;
                     item.Subtotal = 0.0m;
-                    item.Inventory = item.InitialInventory;
+                    //item.Inventory = item.InitialInventory; <- Uncomment to make inventory return to initialInventory after each order
                 }
                 context.SaveChanges();
             }
@@ -81,6 +82,11 @@ namespace BurgerQueen.Controllers
 
         public ActionResult About()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.userId = User.Identity.GetUserId();
+            }
+
             ViewBag.Message = "Soon to be implemented, this feature will allow logged in users to view their previous orders.";
 
             return View();
