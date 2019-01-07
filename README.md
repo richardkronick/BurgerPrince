@@ -1,7 +1,5 @@
 # Burger Prince Cash Register
 
-*** **Still in development** ***
-
 This is a food/menu ordering system. Burger King menu items are used as default examples, however, this can be used as an internal ordering system for not only food or restaurants but for nearly any menu ordering environment. 
 
 The application is written in C#.
@@ -18,12 +16,11 @@ This is a ASP.NET MVC web application which includes the following features:
 - The program calculates the tax owed
 - Once an order is completed, the order is saved to the database
 - The app will keep track of your inventory
+- A logged in user can view their previous orders
+- Pickup or delivery option
 
 Soon to be added features:
-- A logged in user can view their previous orders
-- There is an option to restart your order at any time
-- Improved validation
-- Pickup or delivery option
+
 - Login with Facebook or Google
 
 ## How to Use
