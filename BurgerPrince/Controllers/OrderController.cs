@@ -17,8 +17,10 @@ namespace BurgerPrince.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult OrderDetails(decimal subtotal, decimal tax, decimal total)
+        public ActionResult OrderDetails(decimal subtotal, decimal tax, decimal total, string address, string city, string state, string zip)
         {
+            ViewBag.address = address + ", " + city + ", " + state + " " + zip;
+
             using (var context = new BurgerPrinceContext())
             {
                 string userId = null; 

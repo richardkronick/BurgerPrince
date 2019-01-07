@@ -7,8 +7,7 @@
 <div class="jumbotron text-center">
     <h2>Welcome to Burger Prince!</h2>
     <p class="lead">Try our mouth-watering Whopper!</p>
-    @*<a href="https://github.com/richardkronick/BurgerPrince" target="_blank">Download this application from GitHub</a>
-        <p style="font-size: small">(In addition to what you see here, this application also keeps track of inventory. Test by trying to buy more than 5 of Orange Juice.)</p>*@
+    @*<a href="https://github.com/richardkronick/BurgerPrince" target="_blank">Download this application from GitHub</a>*@
 </div>
 
 <div class="row">
@@ -163,10 +162,22 @@
         <hr />
         <form action="@Url.Action("OrderDetails", "Order",
                  new { subtotal = orderSubtotal, tax = orderTax, total = (orderTax + orderSubtotal) })" method="post">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#pickup" data-toggle="tab" aria-expanded="true">Pick Up</a></li>
+                <li class=""><a href="#delivery" data-toggle="tab" aria-expanded="false">Delivery</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="pickup">
+                    <br /><input type="radio" name="pickup" value="pickup" checked> Pick Up
+                </div>
+                <div class="tab-pane fade" id="delivery">
+                    <br />
+                    <div class="row">
+                        @Html.Partial("AddressForm")
+                    </div>
+                </div>
+            </div>
             <button type="submit" class="btn btn-info">Place Order</button>
         </form>
     </div>
 </div>
-
-
-

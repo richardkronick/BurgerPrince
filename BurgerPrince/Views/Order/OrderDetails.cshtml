@@ -68,7 +68,25 @@
         </tr>
         <tr>
             <td>Order Date and Time: @Model.OrderDateTime</td>
+            <td></td>
+            <td></td>
         </tr>
+        @if (ViewBag.address != ", ,  ")
+        {
+            <tr>
+                <td>Pickup or Delivery? <strong>Delivery</strong></td>
+                <td>Delivery Address: @ViewBag.address</td>
+                <td></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>Pickup or Delivery? <strong>Pickup</strong></td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
     </tbody>
 </table>
 @if (orderSubtotal == 0)
