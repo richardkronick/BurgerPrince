@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Database\BurgerPrinceContext.cs" />
@@ -215,6 +216,10 @@
     <Compile Include="Migrations\201901042132323_AddedUserIdToOrderTable.cs" />
     <Compile Include="Migrations\201901042132323_AddedUserIdToOrderTable.Designer.cs">
       <DependentUpon>201901042132323_AddedUserIdToOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901070040514_AddedItemAndQuantityofOrderToOrderTable.cs" />
+    <Compile Include="Migrations\201901070040514_AddedItemAndQuantityofOrderToOrderTable.Designer.cs">
+      <DependentUpon>201901070040514_AddedItemAndQuantityofOrderToOrderTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -289,6 +294,7 @@
     <Content Include="Views\Shared\DisplayMenuItems.cshtml" />
     <Content Include="Views\Order\OrderDetails.cshtml" />
     <Content Include="Views\Order\ViewMyOrders.cshtml" />
+    <Content Include="Views\Inventory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901042132323_AddedUserIdToOrderTable.resx">
       <DependentUpon>201901042132323_AddedUserIdToOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901070040514_AddedItemAndQuantityofOrderToOrderTable.resx">
+      <DependentUpon>201901070040514_AddedItemAndQuantityofOrderToOrderTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

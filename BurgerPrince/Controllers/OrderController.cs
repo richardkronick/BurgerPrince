@@ -29,6 +29,15 @@ namespace BurgerPrince.Controllers
 
                 List<MenuItem> menuItems = context.MenuItems.ToList();
 
+                string orderedItemsNamesAndQuantities = "";
+                foreach (var item in menuItems)
+                {
+                    if(item.Quantity != 0)
+                    {
+                        orderedItemsNamesAndQuantities += item.ItemName + " (" + item.Quantity + "), ";
+                    }
+                }
+
                 var newOrder = new Order()
                 {
                     OrderDateTime = DateTime.Now,
@@ -36,7 +45,8 @@ namespace BurgerPrince.Controllers
                     OrderTax = tax,
                     OrderTotal = total,
                     MenuItems = menuItems,
-                    UserId = userId
+                    UserId = userId,
+                    OrderedItemsAndQuantities = orderedItemsNamesAndQuantities
                 };
 
                 context.Orders.Add(newOrder);

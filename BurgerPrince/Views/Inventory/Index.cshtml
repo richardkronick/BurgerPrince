@@ -1,0 +1,25 @@
+﻿@model List<BurgerPrince.Models.MenuItem>
+
+@{
+    ViewBag.Title = "Inventory";
+}
+
+<h2>Current Inventory</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Current Inventory</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.Inventory</td>
+                </tr>
+            }
+        </tbody>
+    </table>

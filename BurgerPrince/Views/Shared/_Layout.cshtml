@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("My Orders", "ViewMyOrders", "Order")</li>
+                    <li>@Html.ActionLink("Inventory", "Index", "Inventory")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,6 +32,7 @@
     <div class="container body-content">
         @RenderBody()
         <footer class="page-footer">
+            <hr />
             <p>
                 &copy; @DateTime.Now.Year - Richard Kronick -
                 Covered under the <a href="https://github.com/udacity/ud777-writing-readmes/blob/master/LICENSE" target="_blank">MIT License</a>
