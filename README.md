@@ -30,5 +30,5 @@ Soon to be added features:
 [Here is a sample database](https://imgur.com/a/SoIrYnF) that can be used. Of course, you can split this table up into multiple tables, for example, creating a separate table for the category.
 
 
-# License
+## License
 The contents of this repository are covered under the [MIT License](https://github.com/udacity/ud777-writing-readmes/blob/master/LICENSE).
